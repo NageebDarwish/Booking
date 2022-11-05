@@ -5,6 +5,7 @@ import Parteners from "./Parteners";
 
 const Header = lazy(() => import("./components/Header"));
 const Latest = lazy(() => import("./LatestServices"));
+const Benfits = lazy(() => import("./Benfits"));
 const Services = lazy(() => import("./Services"));
 const Footer = lazy(() => import("./components/Footer"));
 
@@ -51,6 +52,20 @@ export default function App() {
         }
       >
         <Latest />
+      </Suspense>
+      <Suspense
+        fallback={
+          <div
+            style={{
+              position: "relative",
+              height: "100vh",
+            }}
+          >
+            <Loading />
+          </div>
+        }
+      >
+        <Benfits />
       </Suspense>
       <Suspense
         fallback={
