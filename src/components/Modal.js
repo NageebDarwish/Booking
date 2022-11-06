@@ -267,16 +267,14 @@ export default function Modal() {
           </div>
         </div>
       </div>
-      <div className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0 ">
-        <a
-          className="b2b"
-          data-bs-toggle="modal"
-          href="#exampleModalToggle"
-          role="button"
-        >
-          Book
-        </a>
-      </div>
+
+      <a
+        data-bs-toggle="modal"
+        href="#exampleModalToggle"
+        role="button"
+        id="clickToView"
+        style={{ display: "none" }}
+      ></a>
     </div>
   );
 }

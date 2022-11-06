@@ -5,7 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Loading from "./Loading";
 import { useEffect } from "react";
-import Modal from "./Modal";
+// import Modal from "./Modal";
 
 export default function Pack() {
   const [data, setData] = useState([]);
@@ -106,7 +106,7 @@ export default function Pack() {
             </div>
           </Link>
 
-          <Modal />
+          {/* <Modal /> */}
         </div>
         <img
           src={item.package_image}

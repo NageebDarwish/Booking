@@ -2,7 +2,7 @@ import { useState } from "react";
 import parse from "html-react-parser";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Modal from "./components/Modal";
+// import Modal from "./components/Modal";
 
 import { useEffect } from "react";
 
@@ -134,7 +134,7 @@ export default function Pack() {
               Package Price: <span style={{ color: "#ff5959" }}>{data}$</span>
             </h4>
 
-            <Modal />
+            {/* <Modal /> */}
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@ export default function ModalAr() {
       .then((data) => {
         setCityData(data.filter((item) => item.country_id === Number(country)));
       });
-  }, [country]);
+  }, []);
 
   useEffect(() => {
     fetch("https://booking.emkanfinances.net/api/partner/show")
@@ -32,7 +32,7 @@ export default function ModalAr() {
           data.filter((item) => item.city_partner_id === Number(city))
         );
       });
-  }, [city]);
+  }, []);
 
   const countryId = data.map((item, index) => (
     <option key={index} value={item.id}>

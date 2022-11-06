@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from "react";
 
 import Loading from "./components/Loading";
 import Parteners from "./Parteners";
-
+import Modal from "./components/Modal";
 const Header = lazy(() => import("./components/Header"));
 const Latest = lazy(() => import("./LatestServices"));
 const Benfits = lazy(() => import("./Benfits"));
@@ -12,6 +12,7 @@ const Footer = lazy(() => import("./components/Footer"));
 export default function App() {
   return (
     <div className="father">
+      <Modal />
       <Suspense
         fallback={
           <div

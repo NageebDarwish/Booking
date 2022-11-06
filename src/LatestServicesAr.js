@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "react-elastic-carousel";
-import Modal from "./components/ModalAr";
+// import Modal from "./components/ModalAr";
 
 export default function Latest() {
   const [data, setData] = useState([]);
@@ -93,7 +93,7 @@ export default function Latest() {
             التفاصيل
           </div>
         </Link>
-        <Modal />
+        {/* <Modal /> */}
       </div>
     </div>
   ));

@@ -128,7 +128,7 @@ export default function Services() {
         }}
       >
         <video autoPlay muted style={{ width: "100%" }} loop>
-          <source src={require("./assets/before.mp4")} type="video/mp4" />
+          <source type="video/mp4" />
         </video>
       </div>
 

@@ -40,6 +40,11 @@ export default function Services() {
       .then((res) => res.json())
       .then((dataRes) => setdataDepartment(dataRes));
   }, []);
+  useEffect(() => {
+    fetch("https://booking.emkanfinances.net/api/video/show")
+      .then((res) => res.json())
+      .then((dataRes) => console.log(dataRes));
+  }, []);
 
   const dataDepartmentShow = dataDepartment.map((x, key) => (
     <div key={key}>
@@ -141,7 +146,7 @@ export default function Services() {
         }}
       >
         <video autoPlay muted style={{ width: "100%" }} loop>
-          <source src={require("./assets/before.mp4")} type="video/mp4" />
+          <source type="video/mp4" />
         </video>
       </div>
 

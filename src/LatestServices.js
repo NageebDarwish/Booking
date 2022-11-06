@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "react-elastic-carousel";
 
-import Modal from "./components/Modal";
 import PartnerChoose from "./components/PartnerChoose";
 
 export default function Latest() {
@@ -95,8 +94,14 @@ export default function Latest() {
             Deatils
           </div>
         </Link>
-
-        <Modal />
+        <div className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0 ">
+          <div
+            className="b2b"
+            onClick={() => document.getElementById("clickToView").click()}
+          >
+            Book
+          </div>
+        </div>
       </div>
     </div>
   ));
