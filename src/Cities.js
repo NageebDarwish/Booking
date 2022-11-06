@@ -50,7 +50,21 @@ export default function About() {
           <Loading />
         </div>
       )}
-
+      (
+      <div
+        className="wide-father"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          padding: "5rem 0",
+          gap: "20px",
+        }}
+      >
+        {items}
+      </div>
+      )
       <Footer />
     </div>
   );
