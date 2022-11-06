@@ -1127,7 +1127,9 @@ select option:disabled {
 .rec-carousel-item {
   padding-bottom: 10px !important;
 }
-
+.rec-carousel-item div{
+  padding-bottom: 10px !important;
+}
 /* Featured  */
 
 @media(max-width: 768px) {
