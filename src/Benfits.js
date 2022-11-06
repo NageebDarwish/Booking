@@ -7,8 +7,8 @@ export default function Benfits() {
       .then((res) => res.json())
       .then((dataRes) => setData(dataRes));
   }, []);
-  const benfits = data.map((item) => (
-    <div className="col-md-4 text-center">
+  const benfits = data.map((item, index) => (
+    <div className="col-md-4 text-center" key={index}>
       <div className="d-flex flex-column gap-2 text-center">
         <img
           className="mb-3"
