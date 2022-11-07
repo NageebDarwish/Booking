@@ -45,7 +45,9 @@ export default function Benfits() {
         <h2 style={{ color: "var(--benfit)" }} className="mb-3">
           {item.title_en}
         </h2>
-        <p className="card-title mb-3">{item.description_en}</p>
+        <p style={{ fontSize: "13px" }} className="card-title mb-3">
+          {item.description_en}
+        </p>
       </div>
     </div>
   ));

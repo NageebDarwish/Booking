@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "react-elastic-carousel";
-// import Modal from "./components/ModalAr";
+
+import PartnerChoose from "./components/PartnerChoose";
 
 export default function Latest() {
   const [data, setData] = useState([]);
@@ -20,7 +21,7 @@ export default function Latest() {
   ];
 
   const datashow = data.map((item, key) => (
-    <div className="card" key={key} dir="rtl">
+    <div className="card arabic" dir="rtl" key={key}>
       <Link to={`deatils/${item.id}`}>
         <img
           src={item.package_image}
@@ -84,29 +85,36 @@ export default function Latest() {
         </div>
         <p className="card-text">{item.city_details_text1_en}</p>
       </div>
-      <div className="d-flex">
+      <div className="d-flex" style={{ marginRight: "20px" }}>
         <Link to={`deatils/${item.id}`}>
           <div
             className="btn roundrd-circle main-btn btn-login"
-            style={{ marginRight: "10px", marginBottom: "20px" }}
+            style={{ marginLeft: "10px", marginBottom: "20px" }}
           >
             التفاصيل
           </div>
         </Link>
-        {/* <Modal /> */}
+        <div className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0 ">
+          <div
+            className="b2b"
+            onClick={() => document.getElementById("clickToView").click()}
+          >
+            حجز
+          </div>
+        </div>
       </div>
     </div>
   ));
-
   return (
     <div className="wide-father">
       <div className="container latest-slider pt-5 pb-5">
         <h3 className="fw-bold pt-5 text-center mb-5 title-photo">
-          اخر العروض
+          عروض مميزة
         </h3>
         <Carousel breakPoints={breakPoints} enableAutoPlay autoPlaySpeed={2000}>
           {datashow}
         </Carousel>
+        {/* Modal */}
       </div>
     </div>
   );

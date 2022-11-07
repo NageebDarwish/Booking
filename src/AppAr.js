@@ -1,35 +1,108 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 
 import Loading from "./components/Loading";
-const HeaderAr = lazy(() => import("./components/HeaderAr"));
-
-const LatestAr = lazy(() => import("./LatestServicesAr"));
-const ServicesAr = lazy(() => import("./ServicesAr"));
-const PartnerAr = lazy(() => import("./PartnerAr"));
-const FooterAr = lazy(() => import("./components/FooterAr"));
+import Parteners from "./PartnerAr";
+import Modal from "./components/ModalAr";
+import { useEffect } from "react";
+const Header = lazy(() => import("./components/HeaderAr"));
+const Latest = lazy(() => import("./LatestServicesAr"));
+const Benfits = lazy(() => import("./Benfits"));
+const Services = lazy(() => import("./ServicesAr"));
+const Footer = lazy(() => import("./components/FooterAr"));
 
 export default function App() {
-  return (
-    <Suspense
-      fallback={
-        <div
-          style={{
-            position: "relative",
-            height: "100vh",
-          }}
-        >
-          <Loading />
-        </div>
-      }
-    >
-      <div className="father arabic">
-        <HeaderAr />
+  const [theme, setTheme] = useState(true);
+  window.addEventListener("storage", () => {
+    setTheme((prev) => !prev);
+  });
 
-        <LatestAr />
-        <ServicesAr />
-        <PartnerAr />
-        <FooterAr />
-      </div>
-    </Suspense>
+  return (
+    <div className="father">
+      <Modal />
+      <Suspense
+        fallback={
+          <div
+            style={{
+              position: "relative",
+              height: "100vh",
+            }}
+          >
+            <Loading />
+          </div>
+        }
+      >
+        <Header />
+      </Suspense>
+      <Suspense
+        fallback={
+          <div
+            style={{
+              position: "relative",
+              height: "100vh",
+            }}
+          >
+            <Loading />
+          </div>
+        }
+      ></Suspense>
+
+      <Suspense
+        fallback={
+          <div
+            style={{
+              position: "relative",
+              height: "100vh",
+            }}
+          >
+            <Loading />
+          </div>
+        }
+      >
+        <Latest />
+      </Suspense>
+      <Suspense
+        fallback={
+          <div
+            style={{
+              position: "relative",
+              height: "100vh",
+            }}
+          >
+            <Loading />
+          </div>
+        }
+      >
+        <Benfits />
+      </Suspense>
+      <Suspense
+        fallback={
+          <div
+            style={{
+              position: "relative",
+              height: "100vh",
+            }}
+          >
+            <Loading />
+          </div>
+        }
+      >
+        <Services />
+      </Suspense>
+      <Parteners />
+      <Suspense
+        fallback={
+          <div
+            style={{
+              position: "relative",
+              height: "100vh",
+            }}
+          >
+            <Loading />
+          </div>
+        }
+      >
+        <Footer />
+      </Suspense>
+    </div>
   );
 }

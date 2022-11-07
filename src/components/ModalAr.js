@@ -94,14 +94,15 @@ export default function Modal() {
 
   const partnerD = partnerFilter.map((item, index) => (
     <div
+      dir="rtl"
       key={index}
       className="d-flex align-items-center justify-content-between custom-modal flex-wrap gap-1"
     >
       <div className="modal-body-inner">
-        <h2>{item.name_en}</h2>
-        <h5>{item.describtion_en}</h5>
+        <h2>{item.name_ar}</h2>
+        <h5>{item.describtion_ar}</h5>
         <p>
-          email:
+          البريد الالكتروني:
           <a href={`mailto:${item.email}`} className="email">
             {item.email}
           </a>
@@ -200,7 +201,7 @@ export default function Modal() {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="exampleModalToggleLabel4">
-                معلومات عن الشريك
+                معلومات الشريك
               </h1>
               <button
                 type="button"
@@ -215,7 +216,11 @@ export default function Modal() {
                 className="btn btn-primary"
                 data-bs-target="#exampleModalToggle"
                 data-bs-toggle="modal"
-                onClick={() => setPartner(0)}
+                onClick={() => {
+                  setCountry("Choose Country");
+                  setPartnerData([]);
+                  setPartner(0);
+                }}
               >
                 العودة للخلف
               </button>

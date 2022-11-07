@@ -5,10 +5,14 @@ import LandingAr from "./LandingAr";
 export default function Header() {
   var today = new Date();
   var time = today.getHours();
-
-  let handleMode = (x) => {
-    localStorage.setItem("dark", x);
+  const [dark, setDark] = useState(false);
+  let handleMode = () => {
+    setDark(!dark);
+    localStorage.setItem("dark", dark);
   };
+
+  window.dispatchEvent(new Event("storage"));
+
   useEffect(() => {
     if (time >= "6" && time <= "18") {
       localStorage.setItem("dark", false);
@@ -18,13 +22,14 @@ export default function Header() {
       localStorage.setItem("dark", true);
     }
   }, []);
+
   useEffect(() => {
     if (localStorage.getItem("dark") === "true") {
       document.body.classList = "dark-theme";
     } else {
       document.body.classList = "";
     }
-  }, []);
+  }, [dark]);
 
   return (
     <div>
@@ -80,15 +85,9 @@ export default function Header() {
               <Link to="/">EN</Link>
             </div>
             {localStorage.getItem("dark") === "true" ? (
-              <i
-                className="fa-sharp fa-solid fa-sun"
-                onClick={() => handleMode(false)}
-              ></i>
+              <i className="fa-sharp fa-solid fa-sun" onClick={handleMode}></i>
             ) : (
-              <i
-                className="fa-solid fa-moon"
-                onClick={() => handleMode(true)}
-              ></i>
+              <i className="fa-solid fa-moon" onClick={handleMode}></i>
             )}
           </div>
         </div>

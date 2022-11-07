@@ -22,6 +22,7 @@
   --font-nav-color: black;
   --a-footer: #42B5B5;
   --benfit : black;
+
 }
 
 .dark-theme {
@@ -41,6 +42,7 @@
   --font-nav-color: white;
   --a-footer: white;
   --benfit : white;
+
 }
 .popup-overlay{
   background:rgba(0,0,0,.5) !important;

@@ -215,7 +215,11 @@ export default function Modal() {
                 className="btn btn-primary"
                 data-bs-target="#exampleModalToggle"
                 data-bs-toggle="modal"
-                onClick={() => setPartner(0)}
+                onClick={() => {
+                  setCountry("Choose Country");
+                  setPartnerData([]);
+                  setPartner(0);
+                }}
               >
                 Back to Partners
               </button>

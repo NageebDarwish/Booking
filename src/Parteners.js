@@ -18,8 +18,8 @@ export default function Parteners() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        paddingTop: "16px",
-        marginRight: "40px",
+        paddingTop: "10px",
+        marginRight: "10px",
         flexDirection: "column",
       }}
     >
@@ -30,7 +30,6 @@ export default function Parteners() {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
-
           width: "150px",
           height: "150px",
         }}
@@ -40,7 +39,6 @@ export default function Parteners() {
         className=".fw-bold"
         style={{
           fontSize: "18px",
-
           textAlign: "center",
           paddingTop: "10px",
         }}

@@ -37,10 +37,16 @@ export default function Services() {
       });
   }, []);
   useEffect(() => {
-    fetch("https://booking.emkanfinances.net/api/Department/showbyid/2")
+    fetch("https://booking.emkanfinances.net/api/Department/show")
       .then((res) => res.json())
       .then((dataRes) => setdataDepartment(dataRes));
   }, []);
+  useEffect(() => {
+    fetch("https://booking.emkanfinances.net/api/website/showbyid/2")
+      .then((res) => res.json())
+      .then((dataRes) => setVideo(dataRes));
+  }, []);
+
   const videoShow = video.map((item) => item.website_image);
 
   const dataDepartmentShow = dataDepartment.map((x, key) => (
@@ -74,7 +80,7 @@ export default function Services() {
                   }}
                 >
                   <Link
-                    to={`/states/ar/${item.id}`}
+                    to={`/states/${item.id}`}
                     width="100%"
                     style={{ display: "flex", width: "100%" }}
                   >
@@ -98,7 +104,7 @@ export default function Services() {
                           backgroundRepeat: "no-repeat",
                           width: "100%",
                           backgroundSize: " cover",
-                          height: "15.25rem",
+                          height: "16.25rem",
                           position: "relative",
                           borderRadius: "12px",
                         }}
@@ -118,6 +124,19 @@ export default function Services() {
 
   return (
     <>
+      {/* <h1
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%,-50%)",
+            color: "white",
+            textAlign: "center",
+          }}
+        >
+          Travelling Around The World
+        </h1> */}
+      {/* <div className="before-services-img"></div> */}
       <div
         style={{
           width: "100%",
