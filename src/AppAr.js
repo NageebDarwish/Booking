@@ -6,7 +6,7 @@ import Modal from "./components/ModalAr";
 import { useEffect } from "react";
 const Header = lazy(() => import("./components/HeaderAr"));
 const Latest = lazy(() => import("./LatestServicesAr"));
-const Benfits = lazy(() => import("./Benfits"));
+const Benfits = lazy(() => import("./BenfitsAr"));
 const Services = lazy(() => import("./ServicesAr"));
 const Footer = lazy(() => import("./components/FooterAr"));
 
