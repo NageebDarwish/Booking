@@ -104,6 +104,14 @@ export default function Pack() {
               Deatils
             </div>
           </Link>
+          <div className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0 ">
+            <div
+              className="b2b"
+              onClick={() => document.getElementById("clickToView").click()}
+            >
+              Book
+            </div>
+          </div>
         </div>
         <img
           src={item.package_image}

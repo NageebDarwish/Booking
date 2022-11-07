@@ -135,8 +135,14 @@ export default function Pack() {
               >
                 Package Price: <span style={{ color: "#ff5959" }}>{data}$</span>
               </h4>
-
-              {/* <Modal /> */}
+              <div className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0 ">
+                <div
+                  className="b2b"
+                  onClick={() => document.getElementById("clickToView").click()}
+                >
+                  Book
+                </div>
+              </div>
             </div>
           </div>
         </div>

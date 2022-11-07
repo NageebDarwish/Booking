@@ -139,16 +139,13 @@ export default function Pack() {
               >
                 سعر البكج: <span style={{ color: "#ff5959" }}>{data}$</span>
               </h4>
-              <div
-                className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
-                style={{
-                  marginLeft: "10px",
-                  width: "120px",
-                }}
-              >
-                <a href="https://40.87.158.147/reseller/auth/" className="b2b">
+              <div className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0 ">
+                <div
+                  className="b2b"
+                  onClick={() => document.getElementById("clickToView").click()}
+                >
                   حجز
-                </a>
+                </div>
               </div>
             </div>
           </div>
