@@ -6,20 +6,15 @@ export default function Header() {
   var today = new Date();
   var time = today.getHours();
 
-  const [dark, setDark] = useState(false);
-  let handleMode = () => {
-    setDark(!dark);
-    localStorage.setItem("dark", dark);
+  let handleMode = (x) => {
+    localStorage.setItem("dark", x);
   };
   useEffect(() => {
     if (time >= "6" && time <= "18") {
-      setDark(false);
       localStorage.setItem("dark", false);
     } else if (time < "6") {
-      setDark(true);
       localStorage.setItem("dark", true);
     } else if (time > "18") {
-      setDark(true);
       localStorage.setItem("dark", true);
     }
   }, []);
@@ -29,7 +24,7 @@ export default function Header() {
     } else {
       document.body.classList = "";
     }
-  }, [dark]);
+  }, []);
 
   return (
     <div>
@@ -85,9 +80,15 @@ export default function Header() {
               <Link to="/">EN</Link>
             </div>
             {localStorage.getItem("dark") === "true" ? (
-              <i className="fa-sharp fa-solid fa-sun" onClick={handleMode}></i>
+              <i
+                className="fa-sharp fa-solid fa-sun"
+                onClick={() => handleMode(false)}
+              ></i>
             ) : (
-              <i className="fa-solid fa-moon" onClick={handleMode}></i>
+              <i
+                className="fa-solid fa-moon"
+                onClick={() => handleMode(true)}
+              ></i>
             )}
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import Ticker from "react-ticker";
-import Ticker, { FinancialTicker, NewsTicker } from "nice-react-ticker";
+import Ticker from "nice-react-ticker";
 
 export default function Parteners() {
   const [data, setData] = useState([]);
@@ -19,7 +19,8 @@ export default function Parteners() {
         alignItems: "center",
         justifyContent: "center",
         paddingTop: "16px",
-        marginRight: "10px",
+        marginRight: "40px",
+        flexDirection: "column",
       }}
     >
       <div
@@ -29,18 +30,27 @@ export default function Parteners() {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
+
           width: "150px",
           height: "150px",
         }}
       ></div>
 
-      <h1 style={{ fontSize: "18px", textAlign: "center", paddingTop: "10px" }}>
+      <h1
+        className=".fw-bold"
+        style={{
+          fontSize: "18px",
+
+          textAlign: "center",
+          paddingTop: "10px",
+        }}
+      >
         {item.name_en}
       </h1>
     </div>
   ));
   return (
-    <div>
+    <div className="wide-father">
       <Ticker>{Parteners}</Ticker>
     </div>
   );

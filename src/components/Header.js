@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Landing from "./Landing";
 
@@ -11,17 +12,15 @@ export default function Header() {
     setDark(!dark);
     localStorage.setItem("dark", dark);
   };
+
   window.dispatchEvent(new Event("storage"));
 
   useEffect(() => {
     if (time >= "6" && time <= "18") {
-      setDark(false);
       localStorage.setItem("dark", false);
     } else if (time < "6") {
-      setDark(true);
       localStorage.setItem("dark", true);
     } else if (time > "18") {
-      setDark(true);
       localStorage.setItem("dark", true);
     }
   }, []);

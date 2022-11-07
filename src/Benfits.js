@@ -16,31 +16,35 @@ export default function Benfits() {
             className="mb-3"
             style={{
               alignSelf: "center",
-              backgroundImage: `url(${item.image_light})`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "contain",
+              lineHeight: "150px",
               width: "150px",
               height: "150px",
             }}
-            alt={"img"}
             width="150px"
-          ></div>
+          >
+            <img src={item.image_light} alt="logo" width="100px" />
+          </div>
         ) : (
           <div
             className="mb-3"
             style={{
               alignSelf: "center",
-              backgroundImage: `url(${item.image_dark})`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "contain",
+              lineHeight: "150px",
               width: "150px",
               height: "150px",
             }}
-          ></div>
+          >
+            <img
+              style={{ lineHeight: "100px" }}
+              src={item.image_dark}
+              alt="logo"
+              width="100px"
+            />
+          </div>
         )}
-        <h2 className="card-title mb-3">{item.title_en}</h2>
+        <h2 style={{ color: "var(--benfit)" }} className="mb-3">
+          {item.title_en}
+        </h2>
         <p className="card-title mb-3">{item.description_en}</p>
       </div>
     </div>

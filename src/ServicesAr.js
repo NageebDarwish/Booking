@@ -11,6 +11,7 @@ export default function Services() {
   const [loading, setLoading] = useState(true);
   const [dataDepartment, setdataDepartment] = useState([]);
   const [data, setData] = useState([]);
+  const [video, setVideo] = useState([]);
 
   function getFileExtension(fileName) {
     var fileExtension;
@@ -36,10 +37,11 @@ export default function Services() {
       });
   }, []);
   useEffect(() => {
-    fetch("https://booking.emkanfinances.net/api/Department/show")
+    fetch("https://booking.emkanfinances.net/api/Department/showbyid/2")
       .then((res) => res.json())
       .then((dataRes) => setdataDepartment(dataRes));
   }, []);
+  const videoShow = video.map((item) => item.website_image);
 
   const dataDepartmentShow = dataDepartment.map((x, key) => (
     <div key={key}>
@@ -128,7 +130,7 @@ export default function Services() {
         }}
       >
         <video autoPlay muted style={{ width: "100%" }} loop>
-          <source type="video/mp4" />
+          <source src={videoShow} type="video/mp4" />
         </video>
       </div>
 

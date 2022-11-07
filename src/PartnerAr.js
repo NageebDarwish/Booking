@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import Ticker from "react-ticker";
-import Ticker, { FinancialTicker, NewsTicker } from "nice-react-ticker";
+import Ticker from "nice-react-ticker";
 
 export default function Parteners() {
   const [data, setData] = useState([]);
@@ -10,6 +10,10 @@ export default function Parteners() {
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
+  const [theme, setTheme] = useState(true);
+  window.addEventListener("storage", () => {
+    setTheme((prev) => !prev);
+  });
 
   let Parteners = data.map((item, key) => (
     <div
@@ -18,6 +22,7 @@ export default function Parteners() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        flexDirection: "column",
         paddingTop: "16px",
         marginRight: "10px",
       }}
@@ -29,8 +34,8 @@ export default function Parteners() {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
-          width: "150px",
-          height: "150px",
+          width: "100px",
+          height: "100px",
         }}
       ></div>
 
