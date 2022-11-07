@@ -47,12 +47,42 @@ export default function Modal() {
   const partners = partnerData.map((item, index) => (
     <div key={index}>
       <h2 onClick={() => setPartner(item.id)} style={{ cursor: "pointer" }}>
-        <div
-          className="btn btn-primary"
-          data-bs-target="#exampleModalToggle4"
-          data-bs-toggle="modal"
-        >
-          {item.name_en}
+        <div data-bs-target="#exampleModalToggle4" data-bs-toggle="modal">
+          <div
+            key={index}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              paddingTop: "16px",
+              marginRight: "40px",
+              flexDirection: "column",
+            }}
+          >
+            <div
+              className="mb-3"
+              style={{
+                backgroundImage: `url(${item.logo})`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "contain",
+                width: "150px",
+                height: "150px",
+              }}
+            ></div>
+
+            <h1
+              className=".fw-bold"
+              style={{
+                fontSize: "18px",
+                color: "black",
+                textAlign: "center",
+                paddingTop: "10px",
+              }}
+            >
+              {item.name_en}
+            </h1>
+          </div>
         </div>
       </h2>
     </div>
@@ -60,6 +90,7 @@ export default function Modal() {
   const partnerFilter = partnerDetails.filter(
     (item) => item.id === Number(patner)
   );
+  console.log(patner);
 
   const partnerD = partnerFilter.map((item, index) => (
     <div
@@ -83,13 +114,13 @@ export default function Modal() {
           Location: {item.location_en}
         </p>
 
-        <h5>
-          Website:
-          <a href={item.website} target="_blank">
-            {" "}
-            {item.website}
-          </a>
-        </h5>
+        <a
+          href={item.website}
+          className="b2b btn roundrd-circle main-btn btn-book btn-business pl-2"
+          target="_blank"
+        >
+          Book
+        </a>
       </div>
       <img src={item.logo} alt={"logo"} width="200px" />
     </div>
@@ -107,7 +138,7 @@ export default function Modal() {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="exampleModalToggleLabel">
-                Choose Your Country
+                Booking
               </h1>
               <button
                 type="button"
@@ -122,7 +153,11 @@ export default function Modal() {
                   className="form-select"
                   aria-label="Default select example"
                   id="active"
-                  onChange={(e) => setCountry(e.target.value)}
+                  onChange={(e) => {
+                    setPartnerData([]);
+                    setCity("Choose Your City");
+                    setCountry(e.target.value);
+                  }}
                   value={country}
                   required
                 >
@@ -130,109 +165,30 @@ export default function Modal() {
                   {countryId}
                 </select>
               </div>
-            </div>
-            <div className="modal-footer">
               {country !== "Choose Country" && (
-                <button
-                  className="btn btn-primary"
-                  data-bs-target="#exampleModalToggle2"
-                  data-bs-toggle="modal"
-                >
-                  Next
-                </button>
+                <div style={{ paddingTop: "20px" }}>
+                  <select
+                    className="form-select"
+                    aria-label="Default select example"
+                    id="active"
+                    onChange={(e) => setCity(e.target.value)}
+                    value={city}
+                    required
+                  >
+                    <option disabled>Choose Your City</option>
+                    {cityId}
+                  </select>
+                </div>
               )}
+              <div className="modal-body d-flex align-items-center justify-content-center">
+                {partners}
+              </div>
             </div>
+            <div className="modal-footer"></div>
           </div>
         </div>
       </div>
-      <div
-        className="modal fade"
-        id="exampleModalToggle2"
-        aria-hidden="true"
-        aria-labelledby="exampleModalToggleLabel2"
-        tabIndex="-1"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalToggleLabel2">
-                Choose City
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body">
-              <select
-                className="form-select"
-                aria-label="Default select example"
-                id="active"
-                onChange={(e) => setCity(e.target.value)}
-                value={city}
-                required
-              >
-                <option disabled>Choose Your City</option>
-                {cityId}
-              </select>
-            </div>
-            <div className="modal-footer">
-              <button
-                className="btn btn-primary"
-                data-bs-target="#exampleModalToggle"
-                data-bs-toggle="modal"
-                onClick={() => setCity("Choose Your City")}
-              >
-                Back to Countries
-              </button>
-              {city !== "Choose Your City" && (
-                <button
-                  className="btn btn-primary"
-                  data-bs-target="#exampleModalToggle3"
-                  data-bs-toggle="modal"
-                >
-                  Next
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="modal fade"
-        id="exampleModalToggle3"
-        aria-hidden="true"
-        aria-labelledby="exampleModalToggleLabel3"
-        tabIndex="-1"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalToggleLabel3">
-                Choose Partner
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body">{partners}</div>
-            <div className="modal-footer">
-              <button
-                className="btn btn-primary"
-                data-bs-target="#exampleModalToggle2"
-                data-bs-toggle="modal"
-              >
-                Back to Cities
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <div
         className="modal fade"
         id="exampleModalToggle4"
@@ -257,7 +213,7 @@ export default function Modal() {
             <div className="modal-footer">
               <button
                 className="btn btn-primary"
-                data-bs-target="#exampleModalToggle3"
+                data-bs-target="#exampleModalToggle"
                 data-bs-toggle="modal"
                 onClick={() => setPartner(0)}
               >
