@@ -50,7 +50,7 @@ export default function About() {
           <Loading />
         </div>
       )}
-      (
+
       <div
         className="wide-father"
         style={{
@@ -64,7 +64,7 @@ export default function About() {
       >
         {items}
       </div>
-      )
+
       <FooterAr />
     </div>
   );

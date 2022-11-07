@@ -11,6 +11,7 @@ export default function Header() {
     setDark(!dark);
     localStorage.setItem("dark", dark);
   };
+  window.dispatchEvent(new Event("storage"));
 
   useEffect(() => {
     if (time >= "6" && time <= "18") {

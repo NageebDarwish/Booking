@@ -18,11 +18,22 @@ export default function Parteners() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        flexDirection: "column",
         paddingTop: "16px",
+        marginRight: "10px",
       }}
     >
-      <img src={item.logo} width="300px" alt="Partner Logo" />
+      <div
+        className="mb-3"
+        style={{
+          backgroundImage: `url(${item.logo})`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain",
+          width: "150px",
+          height: "150px",
+        }}
+      ></div>
+
       <h1 style={{ fontSize: "18px", textAlign: "center", paddingTop: "10px" }}>
         {item.name_ar}
       </h1>
