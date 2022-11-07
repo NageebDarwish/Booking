@@ -126,6 +126,8 @@ body {
 .btn-business {
   background-color: #FFAD5B;
   color: white;
+  height: fit-content;
+
 }
 
 .btn-business:hover {
@@ -1127,8 +1129,8 @@ select option:disabled {
 .rec-carousel-item {
   padding-bottom: 10px !important;
 }
-.rec-carousel-item div{
-  padding-bottom: 10px !important;
+.rec-carousel-item .card{
+  margin-bottom: 10px !important;
 }
 /* Featured  */
 
