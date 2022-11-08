@@ -55,7 +55,6 @@ export default function Modal() {
               alignItems: "center",
               justifyContent: "center",
               paddingTop: "16px",
-              marginRight: "40px",
               flexDirection: "column",
             }}
           >
@@ -180,7 +179,7 @@ export default function Modal() {
                   </select>
                 </div>
               )}
-              <div className="modal-body d-flex align-items-center justify-content-center">
+              <div className="modal-body gap-3 flex-wrap d-flex align-items-center justify-content-center">
                 {partners}
               </div>
             </div>

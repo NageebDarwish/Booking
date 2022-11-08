@@ -47,7 +47,11 @@ export default function Services() {
       .then((dataRes) => setVideo(dataRes));
   }, []);
 
-  const videoShow = video.map((item) => item.website_image);
+  const videoShow = video.map((item) => (
+    <video autoPlay muted style={{ width: "100%" }} loop>
+      <source src={`${item.website_image}`} type="video/mp4" />
+    </video>
+  ));
 
   const dataDepartmentShow = dataDepartment.map((x, key) => (
     <div key={key}>
@@ -148,9 +152,7 @@ export default function Services() {
           backgroundColor: "var(--first-color)",
         }}
       >
-        <video autoPlay muted style={{ width: "100%" }} loop>
-          <source src={videoShow} type="video/mp4" />
-        </video>
+        {videoShow}
       </div>
 
       <div className="bg-custom">

@@ -55,7 +55,7 @@ export default function Modal() {
               alignItems: "center",
               justifyContent: "center",
               paddingTop: "16px",
-              marginRight: "40px",
+
               flexDirection: "column",
             }}
           >
@@ -80,7 +80,7 @@ export default function Modal() {
                 paddingTop: "10px",
               }}
             >
-              {item.name_en}
+              {item.name_ar}
             </h1>
           </div>
         </div>
@@ -90,7 +90,6 @@ export default function Modal() {
   const partnerFilter = partnerDetails.filter(
     (item) => item.id === Number(patner)
   );
-  console.log(patner);
 
   const partnerD = partnerFilter.map((item, index) => (
     <div
@@ -181,7 +180,7 @@ export default function Modal() {
                   </select>
                 </div>
               )}
-              <div className="modal-body d-flex align-items-center justify-content-center">
+              <div className="modal-body flex-wrap gap-3 d-flex align-items-center justify-content-center">
                 {partners}
               </div>
             </div>

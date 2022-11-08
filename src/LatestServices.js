@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "react-elastic-carousel";
 
-import PartnerChoose from "./components/PartnerChoose";
-
 export default function Latest() {
   const [data, setData] = useState([]);
 
