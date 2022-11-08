@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { Link } from "react-router-dom";
 import Loading from "./components/Loading";
 import { useEffect } from "react";
+import Modal from "./components/Modal";
 // import Modal from "./components/Modal";
 
 export default function Pack() {
@@ -108,6 +109,7 @@ export default function Pack() {
   ));
   return (
     <>
+      <Modal />
       <Header />
       <div>
         <div style={{ marginTop: "10%" }}>

@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 // import Modal from "./components/Modal";
 
 import { useEffect } from "react";
+import Modal from "./components/Modal";
 
 export default function Pack() {
   const [deatils, setDeatil] = useState([]);
@@ -107,6 +108,7 @@ export default function Pack() {
   ));
   return (
     <>
+      <Modal />
       <Header />
       <div style={{ marginTop: "10%" }}>
         {items}

@@ -52,7 +52,7 @@ export default function Benfits() {
     </div>
   ));
   return (
-    <div className="wide-father">
+    <div className="wide-father pb-3">
       <div className="container">
         <h3 className="text-center mb-3 fw-bold pt-3">Why Partner With Us</h3>
         <div className="row">{benfits}</div>

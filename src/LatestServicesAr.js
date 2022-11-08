@@ -94,6 +94,7 @@ export default function Latest() {
         </Link>
         <div className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0 ">
           <div
+            style={{ width: "60px" }}
             className="b2b"
             onClick={() => document.getElementById("clickToView").click()}
           >

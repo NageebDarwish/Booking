@@ -5,6 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Loading from "./Loading";
 import { useEffect } from "react";
+import Modal from "./Modal";
 
 export default function Pack() {
   const [data, setData] = useState([]);
@@ -124,6 +125,7 @@ export default function Pack() {
   ));
   return (
     <>
+      <Modal />
       {loading && (
         <div style={{ height: "100vh" }}>
           <Loading />

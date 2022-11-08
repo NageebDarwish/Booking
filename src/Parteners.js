@@ -17,6 +17,7 @@ export default function Parteners() {
       style={{
         display: "flex",
         alignItems: "center",
+        width: "200px",
         justifyContent: "center",
         paddingTop: "10px",
         marginRight: "10px",
