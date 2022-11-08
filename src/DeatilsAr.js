@@ -2,6 +2,7 @@ import { useState } from "react";
 import parse from "html-react-parser";
 import HeaderAr from "./components/HeaderAr";
 import FooterAr from "./components/FooterAr";
+import ModalAr from "./components/ModalAr";
 
 import { useEffect } from "react";
 
@@ -106,6 +107,7 @@ export default function Pack() {
   ));
   return (
     <>
+      <ModalAr />
       <HeaderAr />
       <div className="arabic" style={{ marginTop: "10%" }}>
         {items}

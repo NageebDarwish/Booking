@@ -4,6 +4,7 @@ import HeaderAr from "./HeaderAr";
 import FooterAr from "./FooterAr";
 import Loading from "./Loading";
 import { useEffect } from "react";
+import ModalAr from "./ModalAr";
 
 export default function Pack() {
   const [data, setData] = useState([]);
@@ -124,6 +125,7 @@ export default function Pack() {
   ));
   return (
     <>
+      <ModalAr />
       <HeaderAr />
       {loading && (
         <div style={{ height: "100vh" }}>
