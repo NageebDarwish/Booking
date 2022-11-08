@@ -2,6 +2,7 @@ import HeaderAr from "./components/HeaderAr";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import FooterAr from "./components/FooterAr";
+import ModalAr from "./components/ModalAr";
 
 export default function About() {
   const [data, setData] = useState([]);
@@ -78,11 +79,23 @@ export default function About() {
             التفاصيل
           </div>
         </Link>
+        <div
+          className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0 "
+          style={{ marginBottom: "20px", marginRight: "10px" }}
+        >
+          <div
+            className="b2b"
+            onClick={() => document.getElementById("clickToView").click()}
+          >
+            حجز البكج
+          </div>
+        </div>
       </div>
     </div>
   ));
   return (
     <div className="wide-father">
+      <ModalAr />
       <HeaderAr />
       <div>
         <div

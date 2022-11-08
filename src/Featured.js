@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./components/Footer";
+import Modal from "./components/Modal";
 
 export default function About() {
   const [data, setData] = useState([]);
@@ -80,11 +81,23 @@ export default function About() {
             Deatils
           </div>
         </Link>
+        <div
+          className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0 "
+          style={{ marginBottom: "20px" }}
+        >
+          <div
+            className="b2b"
+            onClick={() => document.getElementById("clickToView").click()}
+          >
+            Book
+          </div>
+        </div>
       </div>
     </div>
   ));
   return (
     <div className="wide-father">
+      <Modal />
       <Header />
       <div>
         <div

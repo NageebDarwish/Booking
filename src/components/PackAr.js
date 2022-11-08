@@ -104,13 +104,13 @@ export default function Pack() {
                 التفاصيل
               </div>
             </Link>
-            <div
-              className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0"
-              style={{ marginLeft: "10px" }}
-            >
-              <a href="https://40.87.158.147/reseller/auth/" className="b2b">
-                حجز الحزمة
-              </a>
+            <div className="btn roundrd-circle main-btn btn-book btn-business ms-0 ms-lg-2 mt-0 ">
+              <div
+                className="b2b"
+                onClick={() => document.getElementById("clickToView").click()}
+              >
+                حجز البكج
+              </div>
             </div>
           </div>
         </div>
