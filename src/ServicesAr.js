@@ -84,7 +84,7 @@ export default function Services() {
                   }}
                 >
                   <Link
-                    to={`/states/${item.id}`}
+                    to={`/states/ar/${item.id}`}
                     width="100%"
                     style={{ display: "flex", width: "100%" }}
                   >
